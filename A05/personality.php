@@ -29,33 +29,46 @@ class personality
 
     // Generate HTML for the personality card
     public function cards()
-{
-    return ' 
-    <div class="posts">
-        <div class="card" style="border-color:' . $this->color . ';">
-            <div class="card-header d-flex justify-content-between align-items-center" style="background-color:' . $this->color . ';">
-                <div>
-                    <img src="images/chanchannnnn.jpg" class="rounded-circle me-2" alt="Avatar" style="width:40px;">
-                    <strong>' . $this->name . '</strong>
-                </div>
-                <small class="text-muted">' . $this->shortDescription . '</small>
-            </div>
-            <div class="card-body">
-                <p>' . $this->contentText . '</p>
-                <div class="row">
-                    <div class="col-12" style="height:800px; width:900px; overflow-y:hidden;">
-                        <img src="' . $this->contentImage . '" class="post-card img-fluid" style="width: 100%; height: 100%; border-radius: 8px;" alt="Post Image">
+    {
+        // Check if the content is a video or an image
+        if (pathinfo($this->contentImage, PATHINFO_EXTENSION) === 'mp4') {
+            $contentHtml = '
+                <video controls class="post-card img-fluid" style="width: 100%; height: 100%; border-radius: 8px;">
+                    <source src="' . $this->contentImage . '" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>';
+        } else {
+            $contentHtml = '
+                <img src="' . $this->contentImage . '" class="post-card img-fluid" style="width: 100%; height: 100%; border-radius: 8px;" alt="Post Image">';
+        }
+        
+        return ' 
+        <div class="posts">
+            <div class="card" style="border-color:' . $this->color . ';">
+                <div class="card-header d-flex justify-content-between align-items-center" style="background-color:' . $this->color . ';">
+                    <div>
+                        <img src="images/chanchannnnn.jpg" class="rounded-circle me-2" alt="Avatar" style="width:40px;">
+                        <strong>' . $this->name . '</strong>
                     </div>
+                    <small class="text-muted">' . $this->shortDescription . '</small>
                 </div>
-                <div class="mt-2">
-                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-thumbs-up"></i> Like</button>
-                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-comment"></i> Comment</button>
+                <div class="card-body">
+                    <p>' . $this->contentText . '</p>
+                    <div class="row">
+                        <div class="col-12" style="height:800px; width:900px; overflow-y:hidden;">
+                            ' . $contentHtml . '
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-outline-primary btn-sm"><i class="fas fa-thumbs-up"></i> Like</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-comment"></i> Comment</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    ';
-}
+        ';
+    }
+    
 
     
     public function accords($isFirst = false)

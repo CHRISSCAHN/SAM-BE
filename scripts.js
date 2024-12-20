@@ -62,6 +62,13 @@ const captions = [
         type: "filter-web",
         title: "YouTube Clone"
     },
+    {
+        zoom: "images/a05.png",
+        link: "./A05/index.php",
+        image: "images/a05.png",
+        type: "filter-web",
+        title: "A05"
+    },
 ];
 
 var row = document.getElementById("row");
