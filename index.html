@@ -1,0 +1,648 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CHANCHAN Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --Merriweather: 'Merriweather', serif;
+      --Poppins: 'Poppins', sans-serif;
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99999;
+    }
+
+    .navbar-brand {
+      color: whitesmoke;
+      font-family: var(--Merriweather);
+      font-size: 25px;
+    }
+
+    .navbar-brand:hover {
+      color: #fd680e !important;
+    }
+
+    .nav-item,
+    .nav-link {
+      margin: 0 15px;
+      font-family: var(--Poppins);
+      color: whitesmoke;
+    }
+
+    .nav-link.active {
+      color: #fd680e !important;
+      text-decoration: underline;
+      text-underline-offset: 15px;
+      font-weight: normal;
+    }
+
+    .nav-link:hover {
+      color: #fd680e !important;
+    }
+
+    .background-section {
+      width: 100%;
+      height: 100vh;
+      background: url('images/IMG_1.jpg') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .background-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .background-caption h1 {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      font-family: var(--Merriweather);
+    }
+
+    .background-caption p {
+      font-size: 1.5rem;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+      font-family: var(--Poppins);
+    }
+
+    @media (max-width: 768px) {
+      .background-caption h1 {
+        font-size: 1.3rem;
+      }
+
+      .background-caption p {
+        font-size: 0.8rem;
+      }
+
+      .navbar {
+        color: #fd680e !important;
+      }
+
+      #nav1:hover {
+        background-color: #2c3e50;
+        border: none;
+      }
+    }
+
+    .h1-bg {
+      background-color: #2c3e50;
+      width: 100%;
+      padding: 2rem 0;
+    }
+
+    .h1-bg h1 {
+      color: whitesmoke;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .h1-bg h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .portfolio .portfolio-filters {
+      padding: 0;
+      margin: 0 auto 20px auto;
+      list-style: none;
+      text-align: center;
+    }
+
+    .portfolio .portfolio-filters li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0;
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0 10px;
+      line-height: 1;
+      margin-bottom: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .portfolio .portfolio-filters li:hover,
+    .portfolio .portfolio-filters li.filter-active {
+      color: #b8a07e;
+    }
+
+    .portfolio .portfolio-filters li:first-child {
+      margin-left: 0;
+    }
+
+    .portfolio .portfolio-filters li:last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 575px) {
+      .portfolio .portfolio-filters li {
+        font-size: 14px;
+        margin: 0 5px;
+      }
+    }
+
+    .portfolio .portfolio-content {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio .portfolio-content img {
+      transition: 0.3s;
+    }
+
+    .portfolio .portfolio-content .portfolio-info {
+      opacity: 0;
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      transition: all ease-in-out 0.3s;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+    }
+
+    .portfolio .portfolio-content .portfolio-info h4 {
+      font-size: 14px;
+      padding: 5px 10px;
+      font-weight: 400;
+      color: #ffffff;
+      display: inline-block;
+      background-color: #b8a07e;
+    }
+
+    .portfolio .portfolio-content .portfolio-info p {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      display: inline-block;
+      left: 0;
+      right: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .portfolio .portfolio-content .portfolio-info .preview-link,
+    .portfolio .portfolio-content .portfolio-info .details-link {
+      position: absolute;
+      left: calc(50% - 40px);
+      font-size: 26px;
+      top: calc(50% - 14px);
+      color: #fff;
+      transition: 0.3s;
+      line-height: 1.2;
+    }
+
+    .portfolio .portfolio-content .portfolio-info .preview-link:hover,
+    .portfolio .portfolio-content .portfolio-info .details-link:hover {
+      color: #b8a07e;
+    }
+
+    .portfolio .portfolio-content .portfolio-info .details-link {
+      left: 50%;
+      font-size: 34px;
+      line-height: 0;
+    }
+
+    .portfolio .portfolio-content:hover .portfolio-info {
+      opacity: 1;
+    }
+
+    .portfolio .portfolio-content:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Home section with static background -->
+  <section class="Home" id="Home">
+    <div class="background-section">
+      <nav class="navbar navbar-expand-lg navbar-light position-absolute" id="navbar1">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#Home">CHANCHAN</a>
+          <button class="navbar-toggler" onclick="openNav()" id="nav1" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+     <div class="background-caption mx-auto">
+        <h1>Unveil the Artistry of My Journey</h1>
+        <p>Step into my world, where creativity meets purpose, and every project is crafted with passion.</p>
+    </div>
+
+    </div>
+  </section>
+  <!-- about -->
+
+  <!-- About Section -->
+  <section id="about" class="about section bg-light p-5" data-aos="fade-up" data-aos-delay="100">
+    <div class="container text-center py-5">
+      <h2>About</h2>
+      <p>Driven by curiosity and creativity, I bring unique perspectives and dedicated solutions to each project I take on.</p>
+    </div>
+
+    <div class="container">
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-4 text-center">
+          <img src="images/chanchannnnn.jpg" class="img-fluid rounded-circle shadow-sm" alt="Profile"
+            style="max-width: 250px;">
+        </div>
+        <div class="col-lg-8">
+          <h2 class="fw-bold">UI/UX Designer &amp; Web Developer.</h2>
+          <p class="fst-italic py-3">>Passionate about innovation and design, I strive to blend creativity with impact in everything I do.</p>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul class="list-unstyled">
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>Birthday:</strong> <span>4 September 2002
+                  </span></li>
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>Website:</strong>
+                  <span>chanchan.elementfx.com</span>
+                </li>
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>Phone:</strong> <span>+639 568577762</span>
+                </li>
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>City:</strong> <span>Calamba City,
+                    Laguna</span></li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul class="list-unstyled">
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>Age:</strong> <span>22</span></li>
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>Degree:</strong> <span>N/a</span></li>
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>Email:</strong>
+                  <span>christianpaul090402@gmail.com</span>
+                </li>
+                <li><i class="bi bi-chevron-right text-primary"></i> <strong>Dream Job:</strong> <span>Web
+                    Developer</span></li>
+              </ul>
+            </div>
+          </div>
+          <p class="py-3">Crafting digital experiences, one line of code at a time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills section p-5" data-aos="fade-up">
+    <div class="container text-center py-5">
+      <h2>Skills</h2>
+      <p>Passionate web developer with a focus on creating responsive, user-friendly websites. Skilled in front-end and
+        back-end technologies, I bring ideas to life through clean, efficient code and a keen eye for design.</p>
+    </div>
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-6">
+          <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex justify-content-between">
+              <span>HTML</span>
+              <span>100%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="100"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="mb-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="d-flex justify-content-between">
+              <span>CSS</span>
+              <span>90%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%;" aria-valuenow="90"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="mb-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="d-flex justify-content-between">
+              <span>JavaScript</span>
+              <span>75%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="mb-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="d-flex justify-content-between">
+              <span>PHP</span>
+              <span>80%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="mb-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="d-flex justify-content-between">
+              <span>WordPress/CMS</span>
+              <span>90%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%;" aria-valuenow="90"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="mb-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="d-flex justify-content-between">
+              <span>Photoshop</span>
+              <span>55%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 55%;" aria-valuenow="55"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="portfolio" class="portfolio section bg-light pb-5">
+
+    <!-- Section Title -->
+    <div class="container text-center py-5">
+      <h2>Projects</h2>
+      <p>Enjoy my projects.</p>
+    </div>
+
+    <div class="container">
+
+      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+        <ul class="portfolio-filters " data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter="filter-app">App</li>
+          <li data-filter="filter-web">Web</li>
+          <li data-filter="filter-webapp">Webapp</li>
+        </ul>
+
+        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200" id="row">
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Portfolio Section -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg h-100" >
+      <div class="modal-content">
+        <div class="modal-header" id="header">
+        
+        </div>
+        <div class="modal-body mx-auto">
+          <img id="modalImage" src="" style="max-height: 700px;" class="img-fluid mx-auto" alt="Portfolio Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ito ay contact -->
+  <section id="contact" class="contact section py-5">
+    <!-- Section Title -->
+    <div class="container section-title text-center mb-5" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me for any inquiries or collaborations.</p>
+    </div><!-- End Section Title -->
+
+    <form id="contactForm" action="contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+      <div class="row gy-3">
+          <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+          </div>
+          <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+          </div>
+          <div class="col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+      </div>
+  </form>
+
+  <!-- Success Message -->
+  <div id="successMessage" style="display:none; color:green; text-align:center;">
+      Message has been sent successfully!
+  </div>
+
+</div>
+</section>
+  <!-- Footer -->
+  <footer class="footer position-relative light-background my-5 py-5">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">CHANCHAN</span>
+          </a>
+          <p>Feel free to reach out to me for any inquiries or collaborations. I'm passionate about creating exceptional
+            experiences, and I'm always open to new opportunities. Contact me through the provided details, and let's
+            connect!</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>My projects</h4>
+          <ul>
+            <li><a href="#">E-comemrce</a></li>
+            <li><a href="#">Real Time Chat </a></li>
+            <li><a href="#">Facebook Clone</a></li>
+            <li><a href="#">Twitter Clone</a></li>
+            <li><a href="#">APIs</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Me</h4>
+          <p> 0646 SirangLupa </p>
+          <p>Calamba City,Laguna 4027</p>
+          <p>Phone: +639 568577762</p>
+          <p>Email: christianpaul090402@gmail.com</p>
+        </div>
+        <div class="container copyright text-center mt-4">
+          <p>© <span>Copyright</span> <strong class="sitename">CHANCHAN</strong> <span>All Rights Reserved</span>
+          </p>
+          <div class="credits">
+            Designed by <a href="https://www.facebook.com/tiantiannzz">CHANCHAN</a>
+          </div>
+        </div>
+
+  </footer>
+  </div>
+  </div>
+  </footer>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Start of Async Drift Code -->
+<script>
+  "use strict";
+  
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('k85gzx2u2rr4');
+  </script>
+  <!-- End of Async Drift Code -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      $('#contactForm').submit(function (event) {
+          event.preventDefault(); // Prevent default form submission
+  
+          $.ajax({
+              url: 'contact.php', // PHP file to handle form submission
+              type: 'POST',
+              data: $(this).serialize(),
+              success: function (response) {
+                  // Show success message
+                  $('#successMessage').show();
+                  $('#contactForm')[0].reset(); // Reset the form fields
+              },
+              error: function () {
+                  alert('An error occurred. Please try again later.');
+              }
+          });
+      });
+  });
+  </script>
+  <script src="scripts.js"></script>
+  <script>
+    window.history.scrollRestoration = 'manual';
+    document.addEventListener('DOMContentLoaded', function () {
+      window.scrollTo(0, 0);
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const zoomButtons = document.querySelectorAll('.preview-link');
+
+
+      zoomButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+
+
+          const imgSrc = this.getAttribute('href');
+          const title = this.getAttribute('title');
+
+
+
+          const modalImage = document.getElementById('modalImage');
+          modalImage.setAttribute('src', imgSrc);
+
+          var header = document.getElementById("header");
+          header.innerHTML = ` <h5 class="modal-title" id="portfolioModalLabel">`+ title +`</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>` ;
+
+          const myModal = new bootstrap.Modal(document.getElementById('portfolioModal'));
+          myModal.show();
+        });
+      });
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>

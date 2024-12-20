@@ -1,0 +1,106 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.navbar,
+footer {
+    background-color: #4d636f !important;
+    color: white !important;
+}
+
+.navbar-brand,
+.nav-link,
+footer p {
+    color: white !important;
+}
+
+.btn-primary,
+.btn-info,
+.btn-outline-primary,
+.btn-outline-secondary {
+    background-color: #4d636f !important;
+    border-color: #4d636f !important;
+    color: white !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+    background-color: #4d636f !important;
+    color: white !important;
+}
+
+.accordion-button {
+    background-color: #4d636f !important;
+    color: white !important;
+}
+
+.accordion-button.collapsed {
+    background-color: #4d636f !important;
+    color: white !important;
+}
+
+.accordion-button::after {
+    color: white !important;
+}
+
+.profile-img {
+    width: 106px;
+    height: 106px;
+}
+
+.friend-img {
+    width: 50%;
+}
+
+.rounded-circle {
+    border: 2px solid #ddd;
+}
+
+.badge {
+    font-size: 0.8rem;
+}
+
+.status-box {
+    resize: none;
+}
+
+.posts img {
+    margin-bottom: 10px;
+}
+
+.post-card img {
+    max-height: 120px;
+    object-fit: cover;
+}
+.col-md-3 {
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4d636f #f1f1f1;
+}
+
+.col-md-6 {
+    max-height: 120vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4d636f #f1f1f1;
+}
+.col-md-3::-webkit-scrollbar,
+.col-md-6::-webkit-scrollbar {
+    width: 8px;
+}
+
+.col-md-3::-webkit-scrollbar-thumb,
+.col-md-6::-webkit-scrollbar-thumb {
+    background-color: #4d636f;
+    border-radius: 4px;
+}
+
+.col-md-3::-webkit-scrollbar-track,
+.col-md-6::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

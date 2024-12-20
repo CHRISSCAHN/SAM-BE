@@ -1,0 +1,191 @@
+ .navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+  }
+
+
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+    transition: color 0.3s ease;
+  }
+
+  .footer {
+    color:#444444;
+    background-color: #ffffff;
+    font-size: 14px;
+    padding-bottom: 50px;
+    position: relative;
+  }
+  
+  .footer .footer-top {
+    padding-top: 50px;
+  }
+  
+  .footer .footer-about .logo {
+    margin-bottom: 25px;
+  }
+  
+  .footer .footer-about .logo img {
+    max-height: 40px;
+    margin-right: 6px;
+  }
+  
+  .footer .footer-about .logo span {
+    color: #462918;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: var(--Merriweather);
+  }
+  
+  .footer .footer-about p {
+    font-size: 14px;
+    font-family: var(--Merriweather);
+  }
+  
+  .footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, #444444, transparent 50%);
+    font-size: 16px;
+    color: color-mix(in srgb, #444444, transparent 50%);
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+  
+  .footer .social-links a:hover {
+    color: #fd680e;
+    border-color: #fd680e;
+  }
+  
+  .footer h4 {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  
+  .footer .footer-links {
+    margin-bottom: 30px;
+  }
+  
+  .footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer .footer-links ul i {
+    padding-right: 2px;
+    font-size: 12px;
+    line-height: 0;
+  }
+  
+  .footer .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer .footer-links ul li:first-child {
+    padding-top: 0;
+  }
+  
+  .footer .footer-links ul a {
+    color: color-mix(in srgb, #444444, transparent 20%);
+    display: inline-block;
+    line-height: 1;
+  }
+  
+  .footer .footer-links ul a:hover {
+    color: #fd680e;
+  }
+  
+  .footer .footer-contact p {
+    margin-bottom: 5px;
+  }
+  
+  .footer .copyright {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: color-mix(in srgb, #444444, transparent 95%);
+  }
+  
+  .footer .copyright p {
+    margin-bottom: 0;
+  }
+  
+  .footer .credits {
+    margin-top: 6px;
+    font-size: 13px;
+  }
+  .footer .credits a:hover{
+    color: #fd680e;
+  }
+  .contact .info-item {
+    padding: 15px;
+    
+    box-shadow: 0px 0 30px rgba(127, 137, 161, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+#huwaw{
+  background: #fff;
+}
+.contact .info-item i {
+    font-size: 32px;
+    color: #dd5e89;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 30px 0 rgba(11, 35, 43, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    margin-right: 15px;
+}
+.contact .info-item h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #777;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+.contact .info-item p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0 0 0;
+}
+.contact .info-item:hover {
+    box-shadow: 0px 0 30px rgba(127, 137, 161, 0.45);
+}
+.contact .info-item:hover i {
+    background: #dd5e89;
+    color: #fff;
+}
+.php-email-form {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 0 30px rgba(127, 137, 161, 0.25);
+    padding: 30px;
+}
+.php-email-form .form-control {
+    padding: 10px 14px;
+    border-radius: 5px;
+}
+.php-email-form .btn-primary {
+    background: #dd5e89;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+.php-email-form .btn-primary:hover {
+    background: #c84e76;
+}

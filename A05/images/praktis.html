@@ -1,0 +1,74 @@
+<?php
+class personality
+{
+    public $name;
+    public $shortDescription;
+    public $longDescription;
+    public $color;
+    public $image;
+    public $status;
+    public $contentImage;
+    public $contentText;
+    public $contentColor;
+
+    // Constructor for initializing personality data
+    public function __construct($name, $shortDescription, $longDescription, $color, $image, $status, $contentImage, $contentText, $contentColor)
+    {
+        $this->name = $name;
+        $this->shortDescription = $shortDescription;
+        $this->longDescription = $longDescription;
+        $this->color = $color;
+        $this->image = $image;
+        $this->status = $status;
+        $this->contentImage = $contentImage;
+        $this->contentText = $contentText;
+        $this->contentColor = $contentColor;
+    }
+
+    // Generate HTML for the personality card
+    public function cards()
+    {
+        return ' 
+        <div class="posts">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/chanchannnnn.jpg" class="rounded-circle me-2" alt="Avatar" style="width:40px;">
+                        <strong>' . $this->name . '</strong>
+                    </div>
+                    <small class="text-muted">1 min ago</small>
+                </div>
+                <div class="card-body">
+                    <p>' . $this->contentText . '</p>
+                    <div class="row">
+                        <div class="col-6"><img src="' . $this->contentImage . '" class="post-card img-fluid" alt="Post Image"></div>
+                        <div class="col-6"><img src="' . $this->contentImage . '" class="post-card img-fluid" alt="Post Image"></div>
+                    </div>
+                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-thumbs-up"></i> Like</button>
+                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-comment"></i> Comment</button>
+                </div>
+            </div>
+        </div>
+        ';
+    }
+        public function accords()
+    {
+        return ' 
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne">
+                    <i class="fas fa-circle-notch me-2"></i> My Groups
+                </button>
+             </h2>
+             <div id="collapseOne" class="accordion-collapse collapse show"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Some text...</p>
+                 </div>
+            </div>
+        </div>
+        ';
+    }
+}
+?>
