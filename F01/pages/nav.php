@@ -23,6 +23,10 @@
                 <span class="d-sm-inline d-none"><?php echo $userN; ?></span>
               </a>
             </li>
+            <li class="nav-item d-flex align-items-center">
+              <a class="btn btn-outline-primary btn-sm ms-3 mb-0 me-3" target="_blank"
+              href="../index.html">User login</a>
+            </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
