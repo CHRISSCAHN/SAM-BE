@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("../connect.php");
-if (!isset($_SESSION['loggedin']) || !isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['loggedin']) || !isset($_SESSION['id'])) {
   header("Location: sign-in.php");
   exit();
 }
